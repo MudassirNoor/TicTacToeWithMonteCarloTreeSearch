@@ -17,7 +17,7 @@ def Game(board, human, computer):
         board.display()
         if computer.turn:
             print("Computer is playing its move. Please exude patience:")
-            newBoardArray = MonteCarloTreeSearch(node).state.board.boardArray
+            newBoardArray = MonteCarloTreeSearch(node, Constants.SIMULATIONS).state.board.boardArray
             computer.unsetTurn()
             human.setTurn()
         else:
@@ -25,7 +25,7 @@ def Game(board, human, computer):
             while not valid:
                 choice = input("Enter position for your move (1 - 9): ")
                 legalMoves = board.getLegalPositions()
-                if choice not in "123456789":
+                if choice not in "123456789" or choice is '':
                     print("Invalid entry. Try Again")
                 elif (int(choice) - 1) not in legalMoves:
                     print("Not a legal move")

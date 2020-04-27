@@ -6,7 +6,7 @@ import Constants
 
 def main():
     choice = input("Player 1 makes the first move. Will you be player 1 or player 2 (enter 1 or 2): ")
-    while choice not in "12":
+    while choice not in "12" or choice is '':
         choice = input("Invalid option. Enter 1 or 2: ")
 
     human = Player(Constants.HUMAN)
