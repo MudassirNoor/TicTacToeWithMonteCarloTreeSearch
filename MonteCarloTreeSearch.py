@@ -57,7 +57,7 @@ def selectPromisingNode(parentNode : Node):
     bestNode = parentNode.children[0]
 
     for child in parentNode.children:
-        upperConfidence = upperConfidenceBound(parentNode.visits, child.wins, child.visits)
+        upperConfidence = upperConfidenceBound(parentNode.visits, child.getNodeScore(), child.visits)
         if (upperConfidence >= bestUpperConfidenceBound):
             bestNode = child
             bestUpperConfidenceBound = upperConfidence
